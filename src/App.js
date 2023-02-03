@@ -51,6 +51,8 @@ const App = {
             confirmBtn = d('#confirm-btn'),
             voteAgainBtn = d('#voteAgainBtn'),
             writeVotesBtn =  d('#writeVotesBtn'),
+            newVotationBtn = d('#newVotationBtn'),
+            seeResultsBtn = d('#seeResults'),
             popUpBk = d('#popUpBackground'),
             popUp = d('#popUp');
         whiteBtn.addEventListener('click', () => {
@@ -99,10 +101,17 @@ const App = {
         })
         writeVotesBtn.addEventListener('click', () => {
             Render('.screen', Texts.votationFinished)
-            HideAndShowElements([popUpBk])
+            HideAndShowElements([popUpBk, writeVotesBtn, voteAgainBtn, newVotationBtn, seeResultsBtn])
             Texts.setResultsContent(VotesCount.calculateResults(Candidates))
             Render('#popUp', Texts.resultsContent)
             Stages.presentStep = 'finished'
+        })
+        seeResultsBtn.addEventListener('click', () => {
+            HideAndShowElements([popUpBk])
+            
+        })
+        newVotationBtn.addEventListener('click', () => {
+
         })
         popUpBk.addEventListener('click', () => {
             HideAndShowElements([popUpBk])
