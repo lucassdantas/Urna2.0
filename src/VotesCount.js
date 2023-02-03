@@ -112,6 +112,25 @@ const VotesCount = {
             htmlCandidates.president.push(content)
         })
         return htmlCandidates
+    },
+    resetVotes: (Candidates) => {
+        Candidates.stateRepresentative.forEach(candidate => {
+            candidate.votes = 0
+        })
+        Candidates.congressman.forEach(candidate => {
+            candidate.votes = 0
+        })
+        Candidates.senator.forEach(candidate => {
+            candidate.votes = 0
+        })
+        Candidates.governor.forEach(candidate => {
+            candidate.votes = 0
+        })
+        Candidates.president.forEach(candidate => {
+            candidate.votes = 0
+        })
+
+
     }
 
 }

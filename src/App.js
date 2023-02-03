@@ -5,7 +5,6 @@ import {Texts} from './Texts.js'
 import {RenderCandidate, Render} from './RenderCandidate.js'
 import {Errors} from './Errors.js'
 import {VotesCount} from './VotesCount.js'
-import {RestartVotes} from './RestartVotes.js'
 import {HideAndShowElements} from './HideAndShowElements.js'
 const c = m => console.log(m)
 const d = a => document.querySelector(a)
@@ -106,12 +105,17 @@ const App = {
             Render('#popUp', Texts.resultsContent)
             Stages.presentStep = 'finished'
         })
+        newVotationBtn.addEventListener('click', () => {
+            i = 0
+            Texts.setVoteContent(Stages.data[i])
+            Stages.presentStep = "selecting"
+            VotesCount.resetVotes(Candidates)
+            Render(".screen", Texts.voteContent)
+            HideAndShowElements([whiteBtn, eraseBtn, confirmBtn, newVotationBtn, seeResultsBtn])
+        })
         seeResultsBtn.addEventListener('click', () => {
             HideAndShowElements([popUpBk])
             
-        })
-        newVotationBtn.addEventListener('click', () => {
-
         })
         popUpBk.addEventListener('click', () => {
             HideAndShowElements([popUpBk])

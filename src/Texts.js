@@ -17,8 +17,8 @@ const Texts = {
         <input type="button" value="Confirma" id="confirm-btn" class="confirm-btn control-btn">
         <input type="button" value="Novo Eleitor" id='voteAgainBtn' class="white-btn control-btn hidden">
         <input type="button" value="Finalizar Votação" id='writeVotesBtn' class="confirm-btn control-btn hidden">
-        <input type="button" value="Nova votação" id='newVotationBtn' class="confirm-btn control-btn hidden">
         <input type="button" value="Ver resultados" id='seeResults' class="white-btn control-btn hidden">
+        <input type="button" value="Nova votação" id='newVotationBtn' class="confirm-btn control-btn hidden">
     
     `,
     votes:{
