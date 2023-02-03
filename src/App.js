@@ -6,9 +6,9 @@ import {RenderCandidate, Render} from './RenderCandidate.js'
 import {Errors} from './Errors.js'
 import {VotesCount} from './VotesCount.js'
 import {HideAndShowElements} from './HideAndShowElements.js'
+
 const c = m => console.log(m)
 const d = a => document.querySelector(a)
-const da = a => document.querySelectorAll(a)
 
 const setValue = btn => {
     Render('.digited-number', btn.value, true)
@@ -70,10 +70,6 @@ const App = {
             Texts.setVoteContent(Stages.data[i])
             Render(".screen", Texts.voteContent)
             Stages.presentStep = 'selecting'
-            //test
-            HideAndShowElements([popUpBk])
-            Texts.setResultsContent(VotesCount.calculateResults(Candidates))
-            Render('#popUp', Texts.resultsContent)
         })
         confirmBtn.addEventListener('click', () => {
             if((i) >= ( Stages.data.length - 1)) { 
@@ -112,6 +108,7 @@ const App = {
             VotesCount.resetVotes(Candidates)
             Render(".screen", Texts.voteContent)
             HideAndShowElements([whiteBtn, eraseBtn, confirmBtn, newVotationBtn, seeResultsBtn])
+            console.log(Candidates)
         })
         seeResultsBtn.addEventListener('click', () => {
             HideAndShowElements([popUpBk])

@@ -2,6 +2,7 @@ const VotesCount = {
     sumVote: (selected, stage) => {
         selected = selected.candidate
         selected.votes ++
+        console.log(selected)
     },
     calculateResults: (Candidates) => {
         let htmlCandidates = {
