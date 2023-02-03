@@ -54,6 +54,7 @@ const App = {
             seeResultsBtn = d('#seeResults'),
             popUpBk = d('#popUpBackground'),
             popUp = d('#popUp');
+
         whiteBtn.addEventListener('click', () => {
             if(Stages.presentStep == 'selected'){
                 Render('.error-area', Errors.clickOnSelectedStage)
@@ -73,21 +74,23 @@ const App = {
         })
         confirmBtn.addEventListener('click', () => {
             if((i) >= ( Stages.data.length - 1)) { 
+                console.log(i)
                 Stages.presentStep = 'endVotation'
                 HideAndShowElements([whiteBtn, eraseBtn, confirmBtn, voteAgainBtn, writeVotesBtn])
                 Render(".screen", Texts.endStageContent)
             }
             else if(Stages.presentStep == "selected"){
+                VotesCount.sumVote(selected, Stages[i] )
                 i++
                 Render('.error-area', '<br>')
                 Texts.setVoteContent(Stages.data[i])
                 Render(".screen", Texts.voteContent)
                 Stages.presentStep = 'selecting'
-                VotesCount.sumVote(selected, Stages[i] )
             } else if (Stages.presentStep == "selecting") {
                 Render('.error-area', Errors.beforeChoseCandidate)
             }
         })
+
         voteAgainBtn.addEventListener('click', () => {
             i = 0
             App.restart(i)
