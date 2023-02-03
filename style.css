@@ -1,0 +1,298 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+#popUpBackground{
+    position:fixed;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-color:rgba(0,0,0,0.8);
+    width:100vw;
+    height:100vh;
+    top:0;
+    z-index:3;
+
+}
+
+#popUp{
+    display:flex;
+    flex-direction:column;
+    border-radius:10px;
+    height:80vh;
+    width:90vw;
+    background-color: #eee;
+    padding:1em;
+    color:#222;
+    overflow:scroll;
+    z-index:4;
+}
+#popUp .row{
+    margin:1em 0;
+    padding:1em 0;
+    border-bottom:1px solid #222;
+}
+
+.hidden{
+    display:none;
+    visibility:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+input{
+    border:0;
+    background:unset;
+}
+input:hover{
+    cursor:pointer;
+}
+
+.row{
+    display:flex;
+    width:100%;
+    flex-wrap:wrap;
+}
+
+.c50{
+    width:50%;
+}
+
+body{
+    color:#fff;
+    background-color: #eee;
+    font-family:'lato', sans-serif;
+
+}
+.body{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    padding:1em 2em;
+    background-color:rgb(211, 211, 211);
+    border:1px solid rgba(0,0,0,0.2);
+    border-radius:5px;
+    overflow-x:hidden;  
+    margin:2em;
+}
+
+/*Votation screen Area*/
+.screen-area{
+    width:60%;
+    padding:0.5em 2em 0 0;
+}
+.screen{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    background-image:linear-gradient(#fff, rgb(184, 215, 184));
+    height:450px;
+    box-shadow:-1px 0px 5px #222;
+    border-radius:5px;
+    padding:0.5em;
+
+    text-align:center;
+    color:#222;
+
+}
+
+.votation-title{
+    margin:1.5em 0 1em;
+    text-transform:uppercase;
+}
+
+.candidate_photo{
+    width:250px;
+    height:250px;
+    object-fit:cover;
+    border-radius:5px;
+}
+.candidate_info p{
+    text-align:left;
+    margin: 1em 0;
+    font-size:22px;
+}
+.candidate_info span{
+    font-weight:bold;
+}
+
+
+.whiteOrNullVoteArea div{
+    margin:1em 0;
+}
+
+.whiteOrNullVoteArea div span{
+    font-size:24px;
+}
+.error-area{
+    color:#222;
+    text-align:center;
+    padding:1em 0 0 0;
+
+}
+.screen-logo{
+    width:25%;
+}
+
+/*keyboard and buttons area*/
+.keyboard-area{
+    width:40%;
+    max-width:500px;
+} 
+
+.title-area{
+    display:flex;
+    text-align:center;
+    align-items:center;
+    background-color:rgb(245, 245, 245);
+    color:#222;
+    padding:0.5em 1em;
+    filter:saturate(0);  
+    margin-bottom:0.5em; 
+}
+
+.eleitoral-img{
+    width:15%;
+    margin-right:25%;
+}
+
+.title{
+    font-size:1em;
+    padding:0 2em;
+}
+
+.number-area{
+    background-color:#444;
+    padding:1em 4em;
+    text-align:center;
+}
+
+
+input[type=button]:not(.controls input){
+    border:0;
+    box-shadow: 5px 5px 15px #111 ;
+    color:#eee;
+    font-size:24px;
+    margin: 0.5em 3%;
+    padding:1em 1.5em 1em 1em;
+}   
+
+.controls{
+    margin-top:2em;
+    display:flex;
+    justify-content:center;
+
+}
+.controls input{
+    padding:1em 1.5em;
+    margin:0 0.5em;
+    font-size:16px;
+}
+
+.white-btn{
+    background-color: #eee;
+}
+.erase-btn{
+    background-color: rgb(246, 1, 1);
+}
+.confirm-btn{
+    background-color:rgb(6, 151, 6);
+}
+
+/*footer area*/
+footer{
+    background-color:#222;
+    padding:1em;
+    text-align:center;
+    font-size:24px;
+}
+
+
+/*responsivity*/
+@media (max-width:1220px){
+    .body{
+        align-items:center;
+        justify-content:center;
+    }
+    .screen-area{
+        width:100%;
+        margin-bottom:1em;
+        padding:0.5em 1em;
+    }
+    .screen{
+        padding:1em 0;
+    }
+    .keyboard-area{
+        display:flex;
+        flex-direction:column-reverse;
+        width:100%;
+        max-width:800px;
+    }
+    .title-area{
+        margin:0.5em 0;
+    }
+    .candidate-photo{
+        width:150px;
+        height:150px;
+        object-fit:cover;
+    }
+}
+@media(max-width: 700px){
+    .screen{
+        min-height:200px;
+        height:fit-content;
+    }
+    .screen .row{
+        flex-direction:column;
+        align-items:Center;
+    }
+
+
+}
+@media (max-width:580px){
+
+    body{
+        padding:0.5em;
+    }
+    .screen-area{
+        padding:0.5em 0 0;
+    }
+
+    .number-area{
+        padding:1em 0.5em;
+    }
+    .candidate_photo{
+        width:100%;
+        height:100%;
+    }
+    input[type=button]:not(.controls input){
+        padding:0.5em 1em 0.5em 0.5;
+        margin: 0.5em 2%;
+        font-size:18px;
+
+    }
+    .controls{
+        flex-direction:column;
+        align-items:center;
+    }
+    .controls input{
+        margin:5px 0;
+        width:75%;
+    }
+    .title-area{
+        flex-direction:column;
+    }
+    .eleitoral-img{
+        width:50%;
+        margin:0 0 0.5em 0;
+    }
+    .title{
+        font-size:5vw;
+    }
+}
