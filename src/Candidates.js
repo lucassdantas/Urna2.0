@@ -21,21 +21,22 @@ const Candidates = {
             votes: 0
         },
         {
-            name:'Cavalo',
-            number:'2222',
-            photoUrl:'/img/cavalo.jpg',
-            party:'Partido dos Cavalos',
-            post:'Deputado Federal',
-            votes: 0
-        },
-        {
             name:'Águia',
-            number:'3333',
+            number:'2222',
             photoUrl:'/img/aguia.jpg',
             party:'Partido das Águias',
             post:'Deputado Federal',
             votes: 0
+        },
+        {
+            name:'Cavalo',
+            number:'3333',
+            photoUrl:'/img/cavalo.jpg',
+            party:'Partido dos Cavalos',
+            post:'Deputado Federal',
+            votes: 0
         }
+
     ],
     congressman: [
         {
@@ -53,7 +54,7 @@ const Candidates = {
         },
         {
             name:'Cavalo',
-            number:'22222',
+            number:'33333',
             photoUrl:'/img/cavalo.jpg',
             party:'Partido dos cavalos',
             post:'Deputado Estadual',
@@ -92,7 +93,7 @@ const Candidates = {
         },
         {
             name:'Águia',
-            number:'333',
+            number:'222',
             photoUrl:'/img/aguia.jpg',
             party:'Partido das Águias',
             post:'Senador',
@@ -123,7 +124,7 @@ const Candidates = {
         },
         {
             name:'Águia',
-            number:'33',
+            number:'22',
             photoUrl:'/img/aguia.jpg',
             party:'Partido das Águias',
             post:'Governador',

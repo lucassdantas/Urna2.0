@@ -19,15 +19,13 @@ const Texts = {
         <input type="button" value="Finalizar Votação" id='writeVotesBtn' class="confirm-btn control-btn hidden">
         <input type="button" value="Ver resultados" id='seeResults' class="white-btn control-btn hidden">
         <input type="button" value="Nova votação" id='newVotationBtn' class="confirm-btn control-btn hidden">
-    
     `,
     votes:{
-        stateRepresentative:``,
-        congressman:``,
-        senator:``,
-        governor:``,
-        president:``
-
+        stateRepresentative:"",
+        congressman:"",
+        senator:"",
+        governor:"",
+        president:""
     },
     setContent: content => {
         Texts.content =`
@@ -68,24 +66,35 @@ const Texts = {
         `
     },
     setStateRepresentativeContent: content => {
-        Texts.votes.stateRepresentative =
-            content.stateRepresentative
+        content = content.stateRepresentative 
+        content.forEach(candidato => {
+            Texts.votes.stateRepresentative += candidato
+        });
+
     },
     setCongressman: content => {
-        Texts.votes.congressman =
-            content.congressman
+        content = content.congressman 
+        content.forEach(candidato => {
+            Texts.votes.congressman += candidato
+        });
     },
     setSenator: content => {
-        Texts.votes.senator =
-            content.senator
+        content = content.senator 
+        content.forEach(candidato => {
+            Texts.votes.senator += candidato
+        });    
     },
     setGovernor: content => {
-        Texts.votes.governor =
-            content.governor
+        content = content.governor 
+        content.forEach(candidato => {
+            Texts.votes.governor += candidato
+        });      
     },
     setPresident: content => {
-        Texts.votes.president =
-            content.president
+        content = content.president 
+        content.forEach(candidato => {
+            Texts.votes.president += candidato
+        });     
     },
     setResultsContent: content => {
         Texts.setStateRepresentativeContent(content)
@@ -93,7 +102,6 @@ const Texts = {
         Texts.setSenator(content)
         Texts.setGovernor(content)
         Texts.setPresident(content)
-        
         Texts.resultsContent = `
         <div class='row'>
             <div class='col c50'>
@@ -120,12 +128,10 @@ const Texts = {
             </div>
         </div>
         <div class='row'>
-            <div class='col c50'>
+            <div class='col c100'>
                 <small>Votação para:</small>
                 <h2>Presidente</h2>
                 ${Texts.votes.president}
-            </div>
-            <div class='col'>
             </div>
         </div>
         `

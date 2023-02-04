@@ -41,7 +41,6 @@ const App = {
                     Render('.error-area', Errors.clickOnSelectedStage)
                 } else if(Stages.presentStep == 'endVotation'){
                     Render('.error-area', Errors.endVotationStage)
-                    
                 }
             })
         })
@@ -53,7 +52,9 @@ const App = {
             newVotationBtn = d('#newVotationBtn'),
             seeResultsBtn = d('#seeResults'),
             popUpBk = d('#popUpBackground'),
-            popUp = d('#popUp');
+            popUp = d('#popUp'),
+            closePopUpBtn = d('#closePopUpBtn'),
+            seeCandidatesBtn = d('#seeCandidatesBtn');
 
         whiteBtn.addEventListener('click', () => {
             if(Stages.presentStep == 'selected'){
@@ -74,7 +75,7 @@ const App = {
         })
         confirmBtn.addEventListener('click', () => {
             if((i) >= ( Stages.data.length - 1)) { 
-                console.log(i)
+                VotesCount.sumVote(selected, Stages[i] )
                 Stages.presentStep = 'endVotation'
                 HideAndShowElements([whiteBtn, eraseBtn, confirmBtn, voteAgainBtn, writeVotesBtn])
                 Render(".screen", Texts.endStageContent)
@@ -101,7 +102,7 @@ const App = {
             Render('.screen', Texts.votationFinished)
             HideAndShowElements([popUpBk, writeVotesBtn, voteAgainBtn, newVotationBtn, seeResultsBtn])
             Texts.setResultsContent(VotesCount.calculateResults(Candidates))
-            Render('#popUp', Texts.resultsContent)
+            Render('#votationContent', Texts.resultsContent)
             Stages.presentStep = 'finished'
         })
         newVotationBtn.addEventListener('click', () => {
@@ -111,15 +112,17 @@ const App = {
             VotesCount.resetVotes(Candidates)
             Render(".screen", Texts.voteContent)
             HideAndShowElements([whiteBtn, eraseBtn, confirmBtn, newVotationBtn, seeResultsBtn])
-            console.log(Candidates)
         })
         seeResultsBtn.addEventListener('click', () => {
             HideAndShowElements([popUpBk])
             
         })
-        popUpBk.addEventListener('click', () => {
+        closePopUpBtn.addEventListener('click', () => {
             HideAndShowElements([popUpBk])
 
+        })
+        seeCandidatesBtn.addEventListener('click', () => {
+            HideAndShowElements([popUpBk])
         })
     },
     restart: (i) => {
