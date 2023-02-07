@@ -30,17 +30,24 @@
     z-index:999;
     overflow-x:hidden;
 }
-#popUp .row:not(.candidate-all-info:last-child){
+#popUp .row:not(.allCandidates){
     margin:1em 0;
     padding:1em 0;
     border-bottom:1px solid #222;
 }
 
+.candidate-complete-info{
+    width:25%;
+}
+.candidate-complete-info img{
+    width: 50%;
+}
 .candidate-info{
     display:flex;
     flex-direction:column;
     width:100%;
     margin:1em 0;
+    text-align:left;
 
 }
 .candidate-image img{
