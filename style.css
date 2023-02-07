@@ -30,11 +30,35 @@
     z-index:999;
     overflow-x:hidden;
 }
-#popUp .row{
+#popUp .row:not(.candidate-all-info:last-child){
     margin:1em 0;
     padding:1em 0;
     border-bottom:1px solid #222;
 }
+
+.candidate-info{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    margin:1em 0;
+
+}
+.candidate-image img{
+    width:90%;
+    margin-bottom:5px;
+}
+.candidate-info small{
+    font-weight:bold;
+    margin-bottom:5px;
+}
+.candidate-info span{
+    margin-bottom:1em;
+}
+.allCandidates{
+    flex-direction:row;
+    justify-content:space-around;
+}
+
 .closeButtonDiv{
     width:82vw;
     position:fixed;

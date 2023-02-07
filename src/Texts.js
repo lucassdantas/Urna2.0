@@ -27,6 +27,13 @@ const Texts = {
         governor:"",
         president:""
     },
+    allCandidatesContent:{
+        stateRepresentative:"",
+        congressman:"",
+        senator:"",
+        governor:"",
+        president:""
+    },
     setContent: content => {
         Texts.content =`
             <h2 class='votation-title'>${content.post}</h2>
@@ -65,38 +72,158 @@ const Texts = {
             </div>
         `
     },
-    setStateRepresentativeContent: content => {
+    setStateRepresentativeContent: (content, isContent) => {
         content = content.stateRepresentative 
-        content.forEach(candidato => {
-            Texts.votes.stateRepresentative += candidato
-        });
+        if(isContent){
+            content.forEach(candidate => {
+                if(candidate.type != "nullVote" && candidate.type != "whiteVote") {
+                    Texts.allCandidatesContent.stateRepresentative += 
+                    `<div>
+                        <div class='row candidate-all-info'>
+                            <div class='c50 candidate-image'>
+                                <img src='${candidate.photoUrl}' alt='Imagem do candidato'>
+                            </div>
+                            <div class='candidate-info c50'>
+                                <small>Nome:</small>
+                                <span>${candidate.name}</span>
+                                <small>Partido:</small>
+                                <span>${candidate.party}</span>
+                                <small>Número:</small>
+                                <span>${candidate.number}</span>
+                            </div>
+                        </div>
+                    </div>` 
+                }
+            });   
+        } else{
+            content.forEach(candidate => {
+                Texts.votes.stateRepresentative += candidate
+            });     
+        }   
 
     },
-    setCongressman: content => {
+    setCongressman: (content, isContent) => {
         content = content.congressman 
-        content.forEach(candidato => {
-            Texts.votes.congressman += candidato
-        });
+        if(isContent){
+            content.forEach(candidate => {
+                if(candidate.type != "nullVote" && candidate.type != "whiteVote") {
+                    Texts.allCandidatesContent.congressman += 
+                    `<div class='row candidate-all-info'>
+                        <div class='c50 candidate-image'>
+                            <img src='${candidate.photoUrl}' alt='Imagem do candidato'>
+                        </div>
+                        <div class='candidate-info c50'>
+                            <small>Nome:</small>
+                            <span>${candidate.name}</span>
+                            <small>Partido:</small>
+                            <span>${candidate.party}</span>
+                            <small>Número:</small>
+                            <span>${candidate.number}</span>
+                        </div>
+                    </div>` 
+                }
+            });   
+        } else{
+            content.forEach(candidate => {
+                Texts.votes.congressman += candidate
+            });     
+        }   
     },
-    setSenator: content => {
+    setSenator: (content, isContent) => {
         content = content.senator 
-        content.forEach(candidato => {
-            Texts.votes.senator += candidato
-        });    
+        if(isContent){
+            content.forEach(candidate => {
+                if(candidate.type != "nullVote" && candidate.type != "whiteVote") {
+                    Texts.allCandidatesContent.senator += 
+                    `<div class='row candidate-all-info'>
+                        <div class='c50 candidate-image'>
+                            <img src='${candidate.photoUrl}' alt='Imagem do candidato'>
+                        </div>
+                        <div class='candidate-info c50'>
+                            <small>Nome:</small>
+                            <span>${candidate.name}</span>
+                            <small>Partido:</small>
+                            <span>${candidate.party}</span>
+                            <small>Número:</small>
+                            <span>${candidate.number}</span>
+                        </div>
+                    </div>` 
+                }
+            });   
+        } else{
+            content.forEach(candidate => {
+                Texts.votes.senator += candidate
+            });     
+        }       
     },
-    setGovernor: content => {
+    setGovernor: (content, isContent) => {
         content = content.governor 
-        content.forEach(candidato => {
-            Texts.votes.governor += candidato
-        });      
+        if(isContent){
+            content.forEach(candidate => {
+                if(candidate.type != "nullVote" && candidate.type != "whiteVote") {
+                    Texts.allCandidatesContent.governor += 
+                    `<div class='row candidate-all-info'>
+                        <div class='c50 candidate-image'>
+                            <img src='${candidate.photoUrl}' alt='Imagem do candidato'>
+                        </div>
+                        <div class='candidate-info c50'>
+                            <small>Nome:</small>
+                            <span>${candidate.name}</span>
+                            <small>Partido:</small>
+                            <span>${candidate.party}</span>
+                            <small>Número:</small>
+                            <span>${candidate.number}</span>
+                        </div>
+                    </div>` 
+                }
+            });   
+        } else{
+            content.forEach(candidate => {
+                Texts.votes.governor += candidate
+            });     
+        }      
     },
-    setPresident: content => {
+    setPresident: (content, isContent) => {
         content = content.president 
-        content.forEach(candidato => {
-            Texts.votes.president += candidato
-        });     
+        if(isContent){
+            content.forEach(candidate => {
+                if(candidate.type != "nullVote" && candidate.type != "whiteVote") {
+                    Texts.allCandidatesContent.president += 
+                    `<div class='row candidate-all-info'>
+                        <div class='c50 candidate-image'>
+                            <img src='${candidate.photoUrl}' alt='Imagem do candidato'>
+                        </div>
+                        <div class='candidate-info c50'>
+                            <small>Nome:</small>
+                            <span>${candidate.name}</span>
+                            <small>Partido:</small>
+                            <span>${candidate.party}</span>
+                            <small>Número:</small>
+                            <span>${candidate.number}</span>
+                        </div>
+                    </div>` 
+                } else {
+                    Texts.allCandidatesContent.president += 
+                        `<div class='candidate-info'>
+                            <small>Nome:</small>
+                            <span>${candidate.name}</span>
+                        </div>`
+                }
+            });   
+        } else{
+            content.forEach(candidate => {
+                Texts.votes.president += candidate
+            });     
+        }
     },
     setResultsContent: content => {
+        Texts.votes = {
+            stateRepresentative: "",
+            congressman:"",
+            senator:"",
+            governor:"",
+            president:""
+        }
         Texts.setStateRepresentativeContent(content)
         Texts.setCongressman(content)
         Texts.setSenator(content)
@@ -132,6 +259,57 @@ const Texts = {
                 <small>Votação para:</small>
                 <h2>Presidente</h2>
                 ${Texts.votes.president}
+            </div>
+        </div>
+        `
+    },
+    setAllCandidatesContent: content => {
+        Texts.allCandidatesContent= {
+            stateRepresentative: "",
+            congressman:"",
+            senator:"",
+            governor:"",
+            president:""
+        }
+        Texts.setStateRepresentativeContent(content, true)
+        Texts.setCongressman(content, true)
+        Texts.setSenator(content, true)
+        Texts.setGovernor(content, true)
+        Texts.setPresident(content, true)
+        Texts.allCandidatesContent = `
+        <div class='row allCandidates'>
+            <div class='col c100 candidate-all-info'>
+                <small>Votação para:</small>
+                <h2>Deputado Federal</h2>
+                <div class='row'>
+                    ${Texts.allCandidatesContent.stateRepresentative}
+                </div>
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col c100'>
+                <small>Votação para:</small>
+                <h2>Deputado Estadual</h2>
+                ${Texts.allCandidatesContent.congressman}
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col c50 candidate-all-info'>
+                <small>Votação para:</small>
+                <h2>Senador</h2>
+                ${Texts.allCandidatesContent.senator}
+            </div>
+            <div class='col c50 candidate-all-info'>
+                <small>Votação para:</small>
+                <h2>Governador</h2>
+                ${Texts.allCandidatesContent.governor}
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col c100 candidate-all-info'>
+                <small>Votação para:</small>
+                <h2>Presidente</h2>
+                ${Texts.allCandidatesContent.president}
             </div>
         </div>
         `

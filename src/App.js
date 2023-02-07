@@ -91,7 +91,6 @@ const App = {
                 Render('.error-area', Errors.beforeChoseCandidate)
             }
         })
-
         voteAgainBtn.addEventListener('click', () => {
             i = 0
             App.restart(i)
@@ -114,15 +113,18 @@ const App = {
             HideAndShowElements([whiteBtn, eraseBtn, confirmBtn, newVotationBtn, seeResultsBtn])
         })
         seeResultsBtn.addEventListener('click', () => {
+            Render('#votationContent', Texts.resultsContent)   
             HideAndShowElements([popUpBk])
-            
+
         })
         closePopUpBtn.addEventListener('click', () => {
             HideAndShowElements([popUpBk])
 
         })
         seeCandidatesBtn.addEventListener('click', () => {
+            Texts.setAllCandidatesContent(Candidates)
             HideAndShowElements([popUpBk])
+            Render('#votationContent', Texts.allCandidatesContent)
         })
     },
     restart: (i) => {
