@@ -15,7 +15,7 @@ const Candidates = {
         {
             name:'Jumento',
             number:'1111',
-            photoUrl:'/img/jumento.jpg',
+            photoUrl:'/img/deputado-federal/jumento.jpg',
             party:'Partido dos Burros',
             post:'Deputado Federal',
             votes: 0
@@ -23,7 +23,7 @@ const Candidates = {
         {
             name:'Águia',
             number:'2222',
-            photoUrl:'/img/aguia.jpg',
+            photoUrl:'/img/deputado-federal/aguia.jpg',
             party:'Partido das Águias',
             post:'Deputado Federal',
             votes: 0
@@ -31,7 +31,7 @@ const Candidates = {
         {
             name:'Cavalo',
             number:'3333',
-            photoUrl:'/img/cavalo.jpg',
+            photoUrl:'/img/deputado-federal/cavalo.jpg',
             party:'Partido dos Cavalos',
             post:'Deputado Federal',
             votes: 0
@@ -53,9 +53,25 @@ const Candidates = {
             votes:0
         },
         {
+            name:'Jumento',
+            number:'11111',
+            photoUrl:'/img/deputado-estadual/jumento.jpg',
+            party:'Partido dos Jumentos',
+            post:'Deputado Estadual',
+            votes:0
+        },
+        {
+            name:'Águia',
+            number:'22222',
+            photoUrl:'/img/deputado-estadual/aguia.jpg',
+            party:'Partido das Águias',
+            post:'Deputado Estadual',
+            votes:0
+        },
+        {
             name:'Cavalo',
             number:'33333',
-            photoUrl:'/img/cavalo.jpg',
+            photoUrl:'/img/deputado-estadual/cavalo.jpg',
             party:'Partido dos cavalos',
             post:'Deputado Estadual',
             votes:0
@@ -63,7 +79,7 @@ const Candidates = {
         {
             name:'Cachorro',
             number:'44444',
-            photoUrl:'/img/cachorro.jpg',
+            photoUrl:'/img/deputado-estadual/cachorro.jpg',
             party:'Partido dos Cachorros',
             post:'Deputado Estadual',
             votes:0
@@ -74,7 +90,6 @@ const Candidates = {
             name:'Nulo',
             type:'nullVote',
             post:'Senador',
-
             votes: 0
         },
         {
@@ -86,7 +101,7 @@ const Candidates = {
         {
             name:'Jumento',
             number:'111',
-            photoUrl:'/img/jumento.jpg',
+            photoUrl:'/img/senador/jumento.jpg',
             party:'Partido dos Jumentos',
             post:'Senador',
             votes:0    
@@ -94,7 +109,7 @@ const Candidates = {
         {
             name:'Águia',
             number:'222',
-            photoUrl:'/img/aguia.jpg',
+            photoUrl:'/img/senador/aguia.jpg',
             party:'Partido das Águias',
             post:'Senador',
             votes:0
@@ -117,7 +132,7 @@ const Candidates = {
         {
             name:'Jumento',
             number:'11',
-            photoUrl:'/img/jumento.jpg',
+            photoUrl:'/img/governador/jumento.jpg',
             party:'Partido dos Jumentos',
             post:'Governador',
             votes:0
@@ -125,11 +140,20 @@ const Candidates = {
         {
             name:'Águia',
             number:'22',
-            photoUrl:'/img/aguia.jpg',
+            photoUrl:'/img/governador/aguia.jpg',
             party:'Partido das Águias',
             post:'Governador',
             votes:0
+        },
+        {
+            name:'Cachorro',
+            number:'44',
+            photoUrl:'/img/governador/cachorro.jpg',
+            party:'Partido dos Cachorros',
+            post:'Governador',
+            votes:0
         }
+        
     ],
     president: [
         {
@@ -147,7 +171,7 @@ const Candidates = {
         {
             name:'Jumento',
             number:'11',
-            photoUrl:'/img/jumento.jpg',
+            photoUrl:'/img/presidente/jumento.jpg',
             party:'Partido dos Jumentos',
             post:'Presidente',
             votes:0
@@ -155,7 +179,7 @@ const Candidates = {
         {
             name:'Águia',
             number:'22',
-            photoUrl:'/img/aguia.jpg',
+            photoUrl:'/img/presidente/aguia.jpg',
             party:'Partido das Águias',
             post:'Presidente',
             votes:0
