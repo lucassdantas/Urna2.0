@@ -316,12 +316,14 @@ footer{
     }
     .candidate-complete-info{
         width:100%;
+        margin:0 5px;
     }
     .allCandidates .row{
         flex-direction:row!important;
+        justify-content:space-around;
     }
     .candidate-info, .candidate-complete-info{
-        width:50%;
+    width:fit-content;
     }
  
     
@@ -354,9 +356,6 @@ footer{
         padding:0.5em 0 0;
     }
 
-    .screen{
-        padding:0;
-    }
 
     .number-area{
         padding:1em 0.5em;
