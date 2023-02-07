@@ -280,10 +280,12 @@ footer{
     }
     .screen{
         padding:1em 0;
+        height:fit-content;
     }
     .keyboard-area{
         display:flex;
         flex-direction:column-reverse;
+     
         width:100%;
         max-width:800px;
     }
@@ -315,6 +317,21 @@ footer{
     .candidate-complete-info{
         width:100%;
     }
+    .allCandidates .row{
+        flex-direction:row!important;
+    }
+    .candidate-info, .candidate-complete-info{
+        width:50%;
+    }
+ 
+    
+    .allCandidates h2{
+        margin-bottom:1em;
+    }
+    .allCandidates img{
+        width:150px;
+        height:150px;        
+    }
 }
 @media(max-width: 700px){
     .screen{
@@ -335,6 +352,10 @@ footer{
     }
     .screen-area{
         padding:0.5em 0 0;
+    }
+
+    .screen{
+        padding:0;
     }
 
     .number-area{
@@ -388,4 +409,8 @@ footer{
         margin:1em 0;
         width:100%;
     }
+    .allCandidates .row{
+        flex-direction:column!important;
+    }
+
 }
